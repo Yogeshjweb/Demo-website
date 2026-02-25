@@ -252,14 +252,53 @@ header h1{font-size:38px;}
 <section id="contact" class="contact">
 <h2>Contact Us</h2>
 
-<form action="https://formsubmit.co/yogiji257@gmail.com" method="POST">
-<input type="text" name="name" required>
-<input type="email" name="email" required>
-<textarea name="message" required></textarea>
+<section id="contact" class="contact">
+<h2>Contact Us</h2>
 
-<input type="hidden" name="_captcha" value="false">
+<form id="contactForm" action="https://api.web3forms.com/submit" method="POST">
 
-<button type="submit">Send</button>
+<input type="hidden" name="access_key" value="YOUR_ACCESS_KEY_HERE">
+<input type="hidden" name="subject" value="New Website Inquiry - Yogesh Web Services">
+<input type="hidden" name="from_name" value="Yogesh Web Services Website">
+<input type="hidden" name="redirect" value="">
+
+<input type="text" name="name" placeholder="Your Name" required><br>
+<input type="email" name="email" placeholder="Your Email" required><br>
+<textarea name="message" rows="4" placeholder="Your Message" required></textarea><br>
+
+<button type="submit">Send Message</button>
+
+<p id="formMessage" style="margin-top:15px;"></p>
+
+</form>
+</section>
+
+<script>
+const form = document.getElementById('contactForm');
+const message = document.getElementById('formMessage');
+
+form.addEventListener('submit', async function(e){
+e.preventDefault();
+
+const formData = new FormData(form);
+
+const response = await fetch(form.action, {
+method: form.method,
+body: formData
+});
+
+const result = await response.json();
+
+if(result.success){
+message.style.color = "lightgreen";
+message.innerText = "✅ Message Sent Successfully!";
+form.reset();
+}else{
+message.style.color = "red";
+message.innerText = "❌ Something went wrong!";
+}
+});
+</script>
 </form>
 </section>
 
@@ -293,14 +332,5 @@ setTimeout(type,50);
 
 </body>
 </html>
-<form action="https://formsubmit.co/youryogiji257@gmail.com" method="POST">
-<input type="text" name="name" placeholder="Your Name" required><br>
-<input type="email" name="email" placeholder="Your Email" required><br>
-<textarea name="message" rows="4" placeholder="Your Message" required></textarea><br>
 
-<input type="hidden" name="_captcha" value="false">
-<input type="hidden" name="_next" value="https://yourusername.github.io/yourrepo/thankyou.html">
-
-<button type="submit">Send Message</button>
-</form>
 
