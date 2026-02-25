@@ -3,112 +3,238 @@
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Yogesh Web Services</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
 
 <style>
 *{
 margin:0;
 padding:0;
 box-sizing:border-box;
-font-family:Arial, sans-serif;
+font-family:'Poppins',sans-serif;
+scroll-behavior:smooth;
 }
 
 body{
-background:#0f0f0f;
 color:white;
-text-align:center;
+background:linear-gradient(-45deg,#0f2027,#203a43,#2c5364,#1c1c1c);
+background-size:400% 400%;
+animation:bgMove 12s ease infinite;
+overflow-x:hidden;
+}
+
+@keyframes bgMove{
+0%{background-position:0% 50%;}
+50%{background-position:100% 50%;}
+100%{background-position:0% 50%;}
+}
+
+/* Navbar */
+nav{
+position:fixed;
+width:100%;
+top:0;
+background:rgba(0,0,0,0.6);
+backdrop-filter:blur(10px);
+padding:15px;
+display:flex;
+justify-content:space-between;
+z-index:1000;
+}
+
+nav a{
+color:white;
+text-decoration:none;
+margin:0 10px;
+font-weight:500;
 }
 
 header{
-padding:60px 20px;
-background:linear-gradient(135deg,#00c6ff,#0072ff);
+padding:150px 20px 100px;
+text-align:center;
 }
 
 header h1{
-font-size:40px;
+font-size:50px;
+background:linear-gradient(90deg,#00f2fe,#4facfe);
+-webkit-background-clip:text;
+color:transparent;
 }
 
 header p{
-margin-top:10px;
-font-size:18px;
+margin-top:15px;
+font-size:20px;
+opacity:0.9;
 }
 
 .btn{
 display:inline-block;
-margin-top:20px;
-padding:12px 25px;
-background:white;
-color:#0072ff;
+margin-top:30px;
+padding:14px 35px;
+background:linear-gradient(90deg,#00f2fe,#4facfe);
+border-radius:50px;
 text-decoration:none;
-border-radius:30px;
+color:white;
 font-weight:bold;
+transition:0.3s;
+box-shadow:0 0 20px rgba(0,242,254,0.6);
 }
 
+.btn:hover{
+transform:scale(1.1);
+}
+
+/* Section */
 section{
-padding:60px 20px;
+padding:80px 20px;
+text-align:center;
 }
 
-.services{
+h2{
+font-size:32px;
+margin-bottom:40px;
+}
+
+/* Cards */
+.flex{
 display:flex;
-flex-direction:column;
-gap:20px;
-max-width:400px;
-margin:auto;
+flex-wrap:wrap;
+justify-content:center;
+gap:30px;
 }
 
 .card{
-background:#1c1c1c;
-padding:20px;
-border-radius:15px;
-box-shadow:0 0 15px rgba(0,0,0,0.5);
-transition:0.3s;
+background:rgba(255,255,255,0.08);
+backdrop-filter:blur(10px);
+padding:30px;
+width:260px;
+border-radius:20px;
+transition:0.4s;
+box-shadow:0 8px 32px rgba(0,0,0,0.37);
 }
 
 .card:hover{
-transform:scale(1.05);
+transform:translateY(-15px);
 }
 
-.contact{
-background:#111;
-padding:50px 20px;
+/* Pricing */
+.price{
+font-size:30px;
+margin:15px 0;
+color:#00f2fe;
+}
+
+/* Contact */
+.contact input, .contact textarea{
+width:90%;
+max-width:400px;
+padding:12px;
+margin:10px 0;
+border:none;
+border-radius:10px;
 }
 
 .contact button{
-padding:12px 25px;
+padding:12px 30px;
 border:none;
 border-radius:25px;
-background:#00c6ff;
+background:linear-gradient(90deg,#ff512f,#dd2476);
 color:white;
 font-size:16px;
 cursor:pointer;
+}
+
+/* WhatsApp Button */
+.whatsapp{
+position:fixed;
+bottom:20px;
+right:20px;
+background:#25D366;
+color:white;
+padding:15px 20px;
+border-radius:50px;
+text-decoration:none;
+font-weight:bold;
+box-shadow:0 0 15px rgba(0,0,0,0.4);
+}
+
+/* Footer */
+footer{
+padding:20px;
+text-align:center;
+opacity:0.7;
+}
+
+/* Responsive */
+@media(max-width:768px){
+header h1{font-size:34px;}
 }
 </style>
 </head>
 
 <body>
 
+<nav>
+<div><b>Yogesh Web</b></div>
+<div>
+<a href="#services">Services</a>
+<a href="#pricing">Pricing</a>
+<a href="#contact">Contact</a>
+</div>
+</nav>
+
 <header>
-<h1>Yogesh Web Services 🚀</h1>
-<p>Professional Website Design for Your Business</p>
-<a href="#contact" class="btn">Get Started</a>
+<h1>Build Your Dream Website 🚀</h1>
+<p>Professional Web Design That Converts Visitors Into Customers</p>
+<a href="#contact" class="btn">Start Now</a>
 </header>
 
-<section>
+<section id="services">
 <h2>Our Services</h2>
-<br>
-<div class="services">
-<div class="card">Website Design</div>
-<div class="card">Business Promotion</div>
-<div class="card">Digital Growth</div>
+<div class="flex">
+<div class="card">🌐 Website Design</div>
+<div class="card">📈 Business Promotion</div>
+<div class="card">🚀 Digital Growth</div>
+</div>
+</section>
+
+<section id="pricing">
+<h2>Pricing Plans</h2>
+<div class="flex">
+<div class="card">
+<h3>Basic</h3>
+<div class="price">₹499</div>
+<p>1 Page Website<br>Mobile Friendly<br>1 Revision</p>
+</div>
+
+<div class="card">
+<h3>Standard</h3>
+<div class="price">₹999</div>
+<p>3 Pages Website<br>WhatsApp Button<br>3 Revisions</p>
+</div>
+
+<div class="card">
+<h3>Premium</h3>
+<div class="price">₹1999</div>
+<p>5 Pages Website<br>Custom Design<br>Unlimited Revisions</p>
+</div>
 </div>
 </section>
 
 <section id="contact" class="contact">
 <h2>Contact Us</h2>
-<br>
-<p>Phone: 9876543210</p>
-<br>
-<button onclick="alert('Call Now: 9876543210')">Contact Now</button>
+<form>
+<input type="text" placeholder="Your Name" required><br>
+<input type="email" placeholder="Your Email" required><br>
+<textarea rows="4" placeholder="Your Message"></textarea><br>
+<button type="submit">Send Message</button>
+</form>
 </section>
+
+<a href="https://wa.me/919876543210" class="whatsapp" target="_blank">Chat on WhatsApp</a>
+
+<footer>
+© 2026 Yogesh Web Services | All Rights Reserved
+</footer>
 
 </body>
 </html>
