@@ -1,9 +1,10 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+<meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Yogesh Web Services</title>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
 <style>
 *{
@@ -11,44 +12,25 @@ margin:0;
 padding:0;
 box-sizing:border-box;
 font-family:'Poppins',sans-serif;
-scroll-behavior:smooth;
 }
 
 body{
-background:#0f0f0f;
+background:#0f172a;
 color:white;
-overflow-x:hidden;
-}
-
-/* Floating background animation */
-body::before{
-content:"";
-position:fixed;
-width:200%;
-height:200%;
-background:radial-gradient(circle at 30% 30%,#00f2fe22,transparent),
-radial-gradient(circle at 70% 70%,#ff00cc22,transparent);
-animation:moveBg 12s linear infinite;
-z-index:-1;
-}
-
-@keyframes moveBg{
-0%{transform:translate(0,0);}
-50%{transform:translate(-10%,-10%);}
-100%{transform:translate(0,0);}
+line-height:1.6;
 }
 
 /* Navbar */
 nav{
 position:fixed;
-top:0;
 width:100%;
+top:0;
+background:#0f172a;
+padding:15px 40px;
 display:flex;
 justify-content:space-between;
-padding:15px 40px;
-background:rgba(0,0,0,0.6);
-backdrop-filter:blur(10px);
-box-shadow:0 4px 20px rgba(0,0,0,0.4);
+align-items:center;
+box-shadow:0 2px 10px rgba(0,0,0,0.5);
 z-index:1000;
 }
 
@@ -60,138 +42,126 @@ transition:0.3s;
 }
 
 nav a:hover{
-color:#00f2fe;
+color:#38bdf8;
 }
 
 /* Hero */
 header{
-min-height:100vh;
+height:100vh;
 display:flex;
 flex-direction:column;
 justify-content:center;
 align-items:center;
 text-align:center;
 padding:20px;
+background:linear-gradient(135deg,#0f172a,#1e293b);
 }
 
 header h1{
-font-size:55px;
-font-weight:800;
-background:linear-gradient(90deg,#00f2fe,#4facfe,#ff00cc);
--webkit-background-clip:text;
-color:transparent;
+font-size:48px;
+margin-bottom:15px;
+color:#38bdf8;
 }
 
-.typing{
-margin-top:15px;
-font-size:22px;
-color:#ccc;
-height:30px;
+header p{
+font-size:20px;
+opacity:0.9;
 }
 
 .btn{
-margin-top:30px;
-padding:15px 40px;
-border-radius:50px;
-background:linear-gradient(90deg,#00f2fe,#ff00cc);
+margin-top:25px;
+padding:12px 30px;
+background:#38bdf8;
 border:none;
-color:white;
+border-radius:30px;
+color:#0f172a;
 font-weight:bold;
 cursor:pointer;
-transition:0.4s;
-box-shadow:0 0 20px #00f2fe88;
+transition:0.3s;
 }
 
 .btn:hover{
-transform:scale(1.1);
-box-shadow:0 0 30px #ff00ccaa;
+background:white;
 }
 
 /* Sections */
 section{
-padding:100px 20px;
+padding:80px 20px;
 text-align:center;
 }
 
 h2{
-font-size:36px;
-margin-bottom:50px;
+font-size:32px;
+margin-bottom:40px;
+color:#38bdf8;
 }
 
-/* Cards */
 .flex{
 display:flex;
 flex-wrap:wrap;
 justify-content:center;
-gap:40px;
+gap:30px;
 }
 
 .card{
-background:#1a1a1a;
-padding:40px;
-width:280px;
-border-radius:20px;
-transition:0.4s;
-box-shadow:0 10px 30px rgba(0,0,0,0.5);
+background:#1e293b;
+padding:30px;
+width:260px;
+border-radius:15px;
+box-shadow:0 5px 15px rgba(0,0,0,0.4);
+transition:0.3s;
 }
 
 .card:hover{
-transform:translateY(-15px);
-box-shadow:0 15px 40px rgba(0,242,254,0.4);
-}
-
-/* Testimonials */
-.testimonial{
-max-width:600px;
-margin:20px auto;
-background:#1a1a1a;
-padding:30px;
-border-radius:20px;
-box-shadow:0 10px 30px rgba(0,0,0,0.4);
+transform:translateY(-10px);
 }
 
 /* Contact */
-.contact input,.contact textarea{
-width:90%;
-max-width:400px;
+.contact-box{
+max-width:500px;
+margin:auto;
+background:#1e293b;
+padding:30px;
+border-radius:15px;
+}
+
+.contact-box input,
+.contact-box textarea{
+width:100%;
 padding:12px;
-margin:10px;
-border-radius:10px;
+margin:10px 0;
+border-radius:8px;
 border:none;
 }
 
-.contact button{
-padding:12px 30px;
-border-radius:30px;
+.contact-box button{
+width:100%;
+padding:12px;
+background:#38bdf8;
 border:none;
-background:linear-gradient(90deg,#ff512f,#dd2476);
-color:white;
+border-radius:25px;
+font-weight:bold;
 cursor:pointer;
 }
 
-/* WhatsApp */
-.whatsapp{
-position:fixed;
-bottom:20px;
-right:20px;
-background:#25D366;
-padding:15px 20px;
-border-radius:50px;
-color:white;
-text-decoration:none;
-font-weight:bold;
-box-shadow:0 0 20px #000;
+.contact-info{
+margin-top:20px;
+font-size:14px;
+opacity:0.8;
 }
 
-/* Footer */
 footer{
-padding:20px;
 text-align:center;
+padding:20px;
+background:#0f172a;
 opacity:0.6;
 }
 
+/* Responsive */
 @media(max-width:768px){
-header h1{font-size:38px;}
+header h1{
+font-size:32px;
+}
 }
 </style>
 </head>
@@ -199,138 +169,84 @@ header h1{font-size:38px;}
 <body>
 
 <nav>
-<div><b>Yogesh Web</b></div>
+<div><b>Yogesh Web Services</b></div>
 <div>
 <a href="#services">Services</a>
-<a href="#pricing">Pricing</a>
 <a href="#contact">Contact</a>
 </div>
 </nav>
 
 <header>
-<h1>Yogesh Web Services 🚀</h1>
-<div class="typing" id="typing"></div>
-<button class="btn" onclick="document.getElementById('contact').scrollIntoView()">Start Your Project</button>
+<h1>Build Your Business Website 🚀</h1>
+<p>Professional Web Design That Converts Visitors Into Customers</p>
+<button class="btn" onclick="document.getElementById('contact').scrollIntoView()">Get Started</button>
 </header>
 
 <section id="services">
-<h2>Premium Services</h2>
+<h2>Our Services</h2>
 <div class="flex">
-<div class="card">🌐 Modern Website Design</div>
-<div class="card">📈 Business Growth Strategy</div>
-<div class="card">🚀 Full Digital Branding</div>
+<div class="card">🌐 Website Design</div>
+<div class="card">📈 Business Promotion</div>
+<div class="card">🚀 Digital Growth</div>
 </div>
 </section>
 
-<section id="pricing">
-<h2>Pricing Plans</h2>
-<div class="flex">
-<div class="card">
-<h3>Basic</h3>
-<p>₹499</p>
-<p>1 Page Website<br>Mobile Friendly</p>
-</div>
-<div class="card">
-<h3>Standard</h3>
-<p>₹999</p>
-<p>3 Pages<br>WhatsApp Integration</p>
-</div>
-<div class="card">
-<h3>Premium</h3>
-<p>₹1999</p>
-<p>5 Pages<br>Custom Design<br>SEO Setup</p>
-</div>
-</div>
-</section>
+<section id="contact">
+<h2>Contact Me</h2>
 
-<section>
-<h2>Client Testimonials</h2>
-<div class="testimonial">"Amazing service! My business grew fast." ⭐⭐⭐⭐⭐</div>
-<div class="testimonial">"Professional design and fast delivery." ⭐⭐⭐⭐⭐</div>
-</section>
+<div class="contact-box">
 
-<section id="contact" class="contact">
-<h2>Contact Us</h2>
+<form id="contactForm">
+<input type="hidden" name="access_key" value="fa2ceff7-3349-47e9-ba4c-6503b3c07c9a">
+<input type="hidden" name="subject" value="New Inquiry from Website">
 
-<section id="contact" class="contact">
-<h2>Contact Us</h2>
-
-<form id="contactForm" action="https://api.web3forms.com/submit" method="POST">
-
-<input type="hidden" name="access_key" value="YOUR_ACCESS_KEY_HERE">
-<input type="hidden" name="subject" value="New Website Inquiry - Yogesh Web Services">
-<input type="hidden" name="from_name" value="Yogesh Web Services Website">
-<input type="hidden" name="redirect" value="">
-
-<input type="text" name="name" placeholder="Your Name" required><br>
-<input type="email" name="email" placeholder="Your Email" required><br>
-<textarea name="message" rows="4" placeholder="Your Message" required></textarea><br>
+<input type="text" name="name" placeholder="Your Name" required>
+<input type="email" name="email" placeholder="Your Email" required>
+<textarea name="message" rows="4" placeholder="Your Message" required></textarea>
 
 <button type="submit">Send Message</button>
-
-<p id="formMessage" style="margin-top:15px;"></p>
+<p id="responseMessage"></p>
 
 </form>
+
+<div class="contact-info">
+<p>📞 Phone: 8239575119</p>
+<p>📧 Email: yogiji257@gmail.com</p>
+</div>
+
+</div>
 </section>
-
-<script>
-const form = document.getElementById('contactForm');
-const message = document.getElementById('formMessage');
-
-form.addEventListener('submit', async function(e){
-e.preventDefault();
-
-const formData = new FormData(form);
-
-const response = await fetch(form.action, {
-method: form.method,
-body: formData
-});
-
-const result = await response.json();
-
-if(result.success){
-message.style.color = "lightgreen";
-message.innerText = "✅ Message Sent Successfully!";
-form.reset();
-}else{
-message.style.color = "red";
-message.innerText = "❌ Something went wrong!";
-}
-});
-</script>
-</form>
-</section>
-
-<a href="https://wa.me/918239575119" class="whatsapp" target="_blank">Chat on WhatsApp</a>
 
 <footer>
 © 2026 Yogesh Web Services | All Rights Reserved
 </footer>
 
 <script>
-const text = ["We Build Stunning Websites.","We Grow Your Business Online.","We Turn Ideas Into Brands."];
-let count=0;
-let index=0;
-let currentText="";
-let letter="";
+const form = document.getElementById("contactForm");
+const responseMessage = document.getElementById("responseMessage");
 
-(function type(){
-if(count===text.length){count=0;}
-currentText=text[count];
-letter=currentText.slice(0,++index);
-document.getElementById("typing").textContent=letter;
-if(letter.length===currentText.length){
-count++;
-index=0;
-setTimeout(type,1000);
+form.addEventListener("submit", async function(e){
+e.preventDefault();
+
+const formData = new FormData(form);
+
+const response = await fetch("https://api.web3forms.com/submit", {
+method: "POST",
+body: formData
+});
+
+const result = await response.json();
+
+if(result.success){
+responseMessage.style.color = "lightgreen";
+responseMessage.innerText = "Message sent successfully!";
+form.reset();
 }else{
-setTimeout(type,50);
+responseMessage.style.color = "red";
+responseMessage.innerText = "Something went wrong!";
 }
-})();
+});
 </script>
 
 </body>
 </html>
-
-
