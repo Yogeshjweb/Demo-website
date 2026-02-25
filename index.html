@@ -4,164 +4,88 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Yogesh Web Services</title>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
 
 <style>
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:'Poppins',sans-serif;
-}
-
-body{
-background:#0f172a;
-color:white;
-line-height:1.6;
-}
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;scroll-behavior:smooth;}
+body{background:#0f172a;color:white;overflow-x:hidden;}
 
 /* Navbar */
 nav{
-position:fixed;
-width:100%;
-top:0;
-background:#0f172a;
+position:fixed;width:100%;top:0;
+background:rgba(15,23,42,0.95);
 padding:15px 40px;
-display:flex;
-justify-content:space-between;
-align-items:center;
-box-shadow:0 2px 10px rgba(0,0,0,0.5);
+display:flex;justify-content:space-between;
 z-index:1000;
+backdrop-filter:blur(10px);
 }
-
-nav a{
-color:white;
-text-decoration:none;
-margin-left:20px;
-transition:0.3s;
-}
-
-nav a:hover{
-color:#38bdf8;
-}
+nav a{color:white;text-decoration:none;margin-left:20px;transition:0.3s;}
+nav a:hover{color:#38bdf8;}
 
 /* Hero */
 header{
 height:100vh;
-display:flex;
-flex-direction:column;
-justify-content:center;
-align-items:center;
-text-align:center;
-padding:20px;
+display:flex;flex-direction:column;
+justify-content:center;align-items:center;
+text-align:center;padding:20px;
 background:linear-gradient(135deg,#0f172a,#1e293b);
 }
-
 header h1{
-font-size:48px;
-margin-bottom:15px;
-color:#38bdf8;
+font-size:55px;
+background:linear-gradient(90deg,#38bdf8,#818cf8);
+-webkit-background-clip:text;
+color:transparent;
 }
-
-header p{
-font-size:20px;
-opacity:0.9;
-}
-
+header p{margin-top:15px;font-size:20px;opacity:0.9;}
 .btn{
-margin-top:25px;
-padding:12px 30px;
-background:#38bdf8;
-border:none;
-border-radius:30px;
-color:#0f172a;
-font-weight:bold;
-cursor:pointer;
-transition:0.3s;
+margin-top:25px;padding:14px 35px;
+background:#38bdf8;border:none;
+border-radius:30px;font-weight:bold;
+cursor:pointer;transition:0.3s;color:#0f172a;
 }
+.btn:hover{transform:scale(1.1);background:white;}
 
-.btn:hover{
-background:white;
-}
-
-/* Sections */
-section{
-padding:80px 20px;
-text-align:center;
-}
-
-h2{
-font-size:32px;
-margin-bottom:40px;
-color:#38bdf8;
-}
-
-.flex{
-display:flex;
-flex-wrap:wrap;
-justify-content:center;
-gap:30px;
-}
+/* Section */
+section{padding:100px 20px;text-align:center;}
+h2{font-size:36px;margin-bottom:50px;color:#38bdf8;}
+.flex{display:flex;flex-wrap:wrap;justify-content:center;gap:30px;}
 
 .card{
-background:#1e293b;
-padding:30px;
-width:260px;
-border-radius:15px;
-box-shadow:0 5px 15px rgba(0,0,0,0.4);
-transition:0.3s;
+background:#1e293b;padding:30px;width:280px;
+border-radius:15px;transition:0.4s;
+box-shadow:0 5px 20px rgba(0,0,0,0.5);
 }
+.card:hover{transform:translateY(-15px);box-shadow:0 10px 30px #38bdf855;}
+.price{font-size:28px;margin:15px 0;color:#38bdf8;font-weight:bold;}
 
-.card:hover{
-transform:translateY(-10px);
+/* Counter */
+.counter-box{
+display:flex;justify-content:center;
+gap:60px;flex-wrap:wrap;
 }
+.counter h3{font-size:40px;color:#38bdf8;}
+.counter p{opacity:0.8;}
 
 /* Contact */
 .contact-box{
-max-width:500px;
-margin:auto;
-background:#1e293b;
-padding:30px;
+max-width:500px;margin:auto;
+background:#1e293b;padding:30px;
 border-radius:15px;
 }
-
-.contact-box input,
-.contact-box textarea{
-width:100%;
-padding:12px;
-margin:10px 0;
-border-radius:8px;
-border:none;
+.contact-box input,.contact-box textarea{
+width:100%;padding:12px;margin:10px 0;
+border-radius:8px;border:none;
 }
-
 .contact-box button{
-width:100%;
-padding:12px;
-background:#38bdf8;
-border:none;
-border-radius:25px;
-font-weight:bold;
+width:100%;padding:12px;
+background:#38bdf8;border:none;
+border-radius:25px;font-weight:bold;
 cursor:pointer;
 }
+footer{text-align:center;padding:20px;background:#0f172a;opacity:0.6;}
 
-.contact-info{
-margin-top:20px;
-font-size:14px;
-opacity:0.8;
-}
-
-footer{
-text-align:center;
-padding:20px;
-background:#0f172a;
-opacity:0.6;
-}
-
-/* Responsive */
 @media(max-width:768px){
-header h1{
-font-size:32px;
-}
+header h1{font-size:32px;}
 }
 </style>
 </head>
@@ -171,31 +95,77 @@ font-size:32px;
 <nav>
 <div><b>Yogesh Web Services</b></div>
 <div>
+<a href="#about">About</a>
 <a href="#services">Services</a>
+<a href="#pricing">Pricing</a>
 <a href="#contact">Contact</a>
 </div>
 </nav>
 
 <header>
-<h1>Build Your Business Website 🚀</h1>
-<p>Professional Web Design That Converts Visitors Into Customers</p>
+<h1>Grow Your Business Online 🚀</h1>
+<p>Professional Websites That Convert Visitors Into Customers</p>
 <button class="btn" onclick="document.getElementById('contact').scrollIntoView()">Get Started</button>
 </header>
 
+<section id="about">
+<h2>About Us</h2>
+<p style="max-width:700px;margin:auto;opacity:0.8;">
+We build high-converting modern websites designed to grow your business and increase online presence.
+</p>
+</section>
+
+<section>
+<h2>Our Achievements</h2>
+<div class="counter-box">
+<div class="counter">
+<h3 id="clients">0</h3>
+<p>Happy Clients</p>
+</div>
+<div class="counter">
+<h3 id="projects">0</h3>
+<p>Projects Completed</p>
+</div>
+<div class="counter">
+<h3 id="experience">0</h3>
+<p>Years Experience</p>
+</div>
+</div>
+</section>
+
 <section id="services">
-<h2>Our Services</h2>
+<h2>Services</h2>
 <div class="flex">
 <div class="card">🌐 Website Design</div>
-<div class="card">📈 Business Promotion</div>
-<div class="card">🚀 Digital Growth</div>
+<div class="card">📈 SEO Optimization</div>
+<div class="card">🚀 Digital Marketing</div>
+</div>
+</section>
+
+<section id="pricing">
+<h2>Pricing Plans</h2>
+<div class="flex">
+<div class="card">
+<h3>Basic</h3>
+<div class="price">₹999</div>
+<p>1 Page Website<br>Mobile Friendly<br>Delivery 2 Days</p>
+</div>
+<div class="card">
+<h3>Standard</h3>
+<div class="price">₹2499</div>
+<p>3 Pages<br>WhatsApp Integration<br>SEO Setup</p>
+</div>
+<div class="card">
+<h3>Premium</h3>
+<div class="price">₹4999</div>
+<p>5 Pages<br>Custom Design<br>Full Branding</p>
+</div>
 </div>
 </section>
 
 <section id="contact">
 <h2>Contact Me</h2>
-
 <div class="contact-box">
-
 <form id="contactForm">
 <input type="hidden" name="access_key" value="fa2ceff7-3349-47e9-ba4c-6503b3c07c9a">
 <input type="hidden" name="subject" value="New Inquiry from Website">
@@ -206,14 +176,9 @@ font-size:32px;
 
 <button type="submit">Send Message</button>
 <p id="responseMessage"></p>
-
 </form>
 
-<div class="contact-info">
-<p>📞 Phone: 8239575119</p>
-<p>📧 Email: yogiji257@gmail.com</p>
-</div>
-
+<p style="margin-top:20px;">📞 8239575119 | 📧 yogiji257@gmail.com</p>
 </div>
 </section>
 
@@ -222,28 +187,39 @@ font-size:32px;
 </footer>
 
 <script>
-const form = document.getElementById("contactForm");
-const responseMessage = document.getElementById("responseMessage");
+function animateCounter(id,end){
+let count=0;
+let interval=setInterval(()=>{
+count++;
+document.getElementById(id).innerText=count;
+if(count>=end) clearInterval(interval);
+},20);
+}
+animateCounter("clients",120);
+animateCounter("projects",250);
+animateCounter("experience",5);
 
-form.addEventListener("submit", async function(e){
+const form=document.getElementById("contactForm");
+const responseMessage=document.getElementById("responseMessage");
+
+form.addEventListener("submit",async function(e){
 e.preventDefault();
+const formData=new FormData(form);
 
-const formData = new FormData(form);
-
-const response = await fetch("https://api.web3forms.com/submit", {
-method: "POST",
-body: formData
+const response=await fetch("https://api.web3forms.com/submit",{
+method:"POST",
+body:formData
 });
 
-const result = await response.json();
+const result=await response.json();
 
 if(result.success){
-responseMessage.style.color = "lightgreen";
-responseMessage.innerText = "Message sent successfully!";
+responseMessage.style.color="lightgreen";
+responseMessage.innerText="Message Sent Successfully!";
 form.reset();
 }else{
-responseMessage.style.color = "red";
-responseMessage.innerText = "Something went wrong!";
+responseMessage.style.color="red";
+responseMessage.innerText="Something went wrong!";
 }
 });
 </script>
