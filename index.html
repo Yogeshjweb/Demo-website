@@ -3,7 +3,7 @@
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Yogesh Web Services</title>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700;800&display=swap" rel="stylesheet">
 
 <style>
 *{
@@ -15,83 +15,107 @@ scroll-behavior:smooth;
 }
 
 body{
+background:#0f0f0f;
 color:white;
-background:linear-gradient(-45deg,#0f2027,#203a43,#2c5364,#1c1c1c);
-background-size:400% 400%;
-animation:bgMove 12s ease infinite;
 overflow-x:hidden;
 }
 
-@keyframes bgMove{
-0%{background-position:0% 50%;}
-50%{background-position:100% 50%;}
-100%{background-position:0% 50%;}
+/* Floating background animation */
+body::before{
+content:"";
+position:fixed;
+width:200%;
+height:200%;
+background:radial-gradient(circle at 30% 30%,#00f2fe22,transparent),
+radial-gradient(circle at 70% 70%,#ff00cc22,transparent);
+animation:moveBg 12s linear infinite;
+z-index:-1;
+}
+
+@keyframes moveBg{
+0%{transform:translate(0,0);}
+50%{transform:translate(-10%,-10%);}
+100%{transform:translate(0,0);}
 }
 
 /* Navbar */
 nav{
 position:fixed;
-width:100%;
 top:0;
-background:rgba(0,0,0,0.6);
-backdrop-filter:blur(10px);
-padding:15px;
+width:100%;
 display:flex;
 justify-content:space-between;
+padding:15px 40px;
+background:rgba(0,0,0,0.6);
+backdrop-filter:blur(10px);
+box-shadow:0 4px 20px rgba(0,0,0,0.4);
 z-index:1000;
 }
 
 nav a{
 color:white;
 text-decoration:none;
-margin:0 10px;
-font-weight:500;
+margin-left:20px;
+transition:0.3s;
 }
 
+nav a:hover{
+color:#00f2fe;
+}
+
+/* Hero */
 header{
-padding:150px 20px 100px;
+min-height:100vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
 text-align:center;
+padding:20px;
 }
 
 header h1{
-font-size:50px;
-background:linear-gradient(90deg,#00f2fe,#4facfe);
+font-size:55px;
+font-weight:800;
+background:linear-gradient(90deg,#00f2fe,#4facfe,#ff00cc);
 -webkit-background-clip:text;
 color:transparent;
 }
 
-header p{
+.typing{
 margin-top:15px;
-font-size:20px;
-opacity:0.9;
+font-size:22px;
+color:#ccc;
+height:30px;
 }
 
 .btn{
-display:inline-block;
 margin-top:30px;
-padding:14px 35px;
-background:linear-gradient(90deg,#00f2fe,#4facfe);
+padding:15px 40px;
 border-radius:50px;
-text-decoration:none;
+background:linear-gradient(90deg,#00f2fe,#ff00cc);
+border:none;
 color:white;
 font-weight:bold;
-transition:0.3s;
-box-shadow:0 0 20px rgba(0,242,254,0.6);
+cursor:pointer;
+transition:0.4s;
+box-shadow:0 0 20px #00f2fe88;
 }
 
 .btn:hover{
 transform:scale(1.1);
+box-shadow:0 0 30px #ff00ccaa;
 }
 
-/* Section */
+/* Sections */
 section{
-padding:80px 20px;
+padding:100px 20px;
 text-align:center;
 }
 
 h2{
-font-size:32px;
-margin-bottom:40px;
+font-size:36px;
+margin-bottom:50px;
 }
 
 /* Cards */
@@ -99,74 +123,75 @@ margin-bottom:40px;
 display:flex;
 flex-wrap:wrap;
 justify-content:center;
-gap:30px;
+gap:40px;
 }
 
 .card{
-background:rgba(255,255,255,0.08);
-backdrop-filter:blur(10px);
-padding:30px;
-width:260px;
+background:#1a1a1a;
+padding:40px;
+width:280px;
 border-radius:20px;
 transition:0.4s;
-box-shadow:0 8px 32px rgba(0,0,0,0.37);
+box-shadow:0 10px 30px rgba(0,0,0,0.5);
 }
 
 .card:hover{
 transform:translateY(-15px);
+box-shadow:0 15px 40px rgba(0,242,254,0.4);
 }
 
-/* Pricing */
-.price{
-font-size:30px;
-margin:15px 0;
-color:#00f2fe;
+/* Testimonials */
+.testimonial{
+max-width:600px;
+margin:20px auto;
+background:#1a1a1a;
+padding:30px;
+border-radius:20px;
+box-shadow:0 10px 30px rgba(0,0,0,0.4);
 }
 
 /* Contact */
-.contact input, .contact textarea{
+.contact input,.contact textarea{
 width:90%;
 max-width:400px;
 padding:12px;
-margin:10px 0;
-border:none;
+margin:10px;
 border-radius:10px;
+border:none;
 }
 
 .contact button{
 padding:12px 30px;
+border-radius:30px;
 border:none;
-border-radius:25px;
 background:linear-gradient(90deg,#ff512f,#dd2476);
 color:white;
-font-size:16px;
 cursor:pointer;
 }
 
-/* WhatsApp Button */
+/* WhatsApp */
 .whatsapp{
 position:fixed;
 bottom:20px;
 right:20px;
 background:#25D366;
-color:white;
 padding:15px 20px;
 border-radius:50px;
+color:white;
 text-decoration:none;
 font-weight:bold;
-box-shadow:0 0 15px rgba(0,0,0,0.4);
+box-shadow:0 0 20px #000;
 }
 
 /* Footer */
 footer{
 padding:20px;
 text-align:center;
-opacity:0.7;
+opacity:0.6;
 }
 
-/* Responsive */
 @media(max-width:768px){
-header h1{font-size:34px;}
+header h1{font-size:38px;}
 }
 </style>
 </head>
@@ -183,17 +208,17 @@ header h1{font-size:34px;}
 </nav>
 
 <header>
-<h1>Build Your Dream Website 🚀</h1>
-<p>Professional Web Design That Converts Visitors Into Customers</p>
-<a href="#contact" class="btn">Start Now</a>
+<h1>Yogesh Web Services 🚀</h1>
+<div class="typing" id="typing"></div>
+<button class="btn" onclick="document.getElementById('contact').scrollIntoView()">Start Your Project</button>
 </header>
 
 <section id="services">
-<h2>Our Services</h2>
+<h2>Premium Services</h2>
 <div class="flex">
-<div class="card">🌐 Website Design</div>
-<div class="card">📈 Business Promotion</div>
-<div class="card">🚀 Digital Growth</div>
+<div class="card">🌐 Modern Website Design</div>
+<div class="card">📈 Business Growth Strategy</div>
+<div class="card">🚀 Full Digital Branding</div>
 </div>
 </section>
 
@@ -202,32 +227,45 @@ header h1{font-size:34px;}
 <div class="flex">
 <div class="card">
 <h3>Basic</h3>
-<div class="price">₹499</div>
-<p>1 Page Website<br>Mobile Friendly<br>1 Revision</p>
+<p>₹499</p>
+<p>1 Page Website<br>Mobile Friendly</p>
 </div>
-
 <div class="card">
 <h3>Standard</h3>
-<div class="price">₹999</div>
-<p>3 Pages Website<br>WhatsApp Button<br>3 Revisions</p>
+<p>₹999</p>
+<p>3 Pages<br>WhatsApp Integration</p>
 </div>
-
 <div class="card">
 <h3>Premium</h3>
-<div class="price">₹1999</div>
-<p>5 Pages Website<br>Custom Design<br>Unlimited Revisions</p>
+<p>₹1999</p>
+<p>5 Pages<br>Custom Design<br>SEO Setup</p>
 </div>
 </div>
+</section>
+
+<section>
+<h2>Client Testimonials</h2>
+<div class="testimonial">"Amazing service! My business grew fast." ⭐⭐⭐⭐⭐</div>
+<div class="testimonial">"Professional design and fast delivery." ⭐⭐⭐⭐⭐</div>
 </section>
 
 <section id="contact" class="contact">
 <h2>Contact Us</h2>
 <form>
-<input type="text" placeholder="Your Name" required><br>
-<input type="email" placeholder="Your Email" required><br>
-<textarea rows="4" placeholder="Your Message"></textarea><br>
+<form action="https://formsubmit.co/yogiji257@gmail.com" method="POST">
+<input type="text" name="name" placeholder="Your Name" required><br>
+<input type="email" name="email" placeholder="Your Email" required><br>
+<textarea name="message" rows="4" placeholder="Your Message" required></textarea><br>
+
+<input type="hidden" name="_captcha" value="false">
+<input type="hidden" name="_next" value="https://yourusername.github.io/yourrepo/thankyou.html">
+
 <button type="submit">Send Message</button>
 </form>
+
+
+
+  
 </section>
 
 <a href="https://wa.me/918239575119" class="whatsapp" target="_blank">Chat on WhatsApp</a>
@@ -235,6 +273,28 @@ header h1{font-size:34px;}
 <footer>
 © 2026 Yogesh Web Services | All Rights Reserved
 </footer>
+
+<script>
+const text = ["We Build Stunning Websites.","We Grow Your Business Online.","We Turn Ideas Into Brands."];
+let count=0;
+let index=0;
+let currentText="";
+let letter="";
+
+(function type(){
+if(count===text.length){count=0;}
+currentText=text[count];
+letter=currentText.slice(0,++index);
+document.getElementById("typing").textContent=letter;
+if(letter.length===currentText.length){
+count++;
+index=0;
+setTimeout(type,1000);
+}else{
+setTimeout(type,50);
+}
+})();
+</script>
 
 </body>
 </html>
