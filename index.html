@@ -3,16 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Yogesh Balcony Designs | Premium Decor</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <title>Shri Tejal Craft Services | Premium Balcony Decor</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600&family=Montserrat:wght@300;400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     
     <style>
         :root {
-            --primary: #d4a373; /* Luxury Gold/Sand color */
-            --dark: #1a1a1a;
-            --light: #fefae0;
+            --primary: #c5a059; /* Elegant Gold */
+            --dark: #121212;
             --white: #ffffff;
+            --accent: #f4f1ea;
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -21,75 +21,83 @@
         /* Navigation */
         header { 
             display: flex; justify-content: space-between; align-items: center; 
-            padding: 20px 8%; background: rgba(255, 255, 255, 0.95); 
+            padding: 20px 5%; background: rgba(255, 255, 255, 0.98); 
             position: fixed; width: 100%; top: 0; z-index: 1000;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
         }
-        .logo { font-family: 'Playfair Display', serif; font-size: 1.8rem; color: var(--dark); border-bottom: 3px solid var(--primary); }
-        nav a { text-decoration: none; color: var(--dark); margin-left: 30px; font-weight: 600; font-size: 0.9rem; transition: 0.3s; }
+        .logo { 
+            font-family: 'Cinzel', serif; 
+            font-size: 1.4rem; 
+            color: var(--dark); 
+            letter-spacing: 2px;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+        .logo span { color: var(--primary); }
+        
+        nav a { text-decoration: none; color: var(--dark); margin-left: 25px; font-weight: 700; font-size: 0.85rem; transition: 0.3s; letter-spacing: 1px; }
         nav a:hover { color: var(--primary); }
 
         /* Hero Section */
         .hero { 
             height: 100vh; 
-            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
-                        url('https://images.unsplash.com/photo-1533090161767-e6ffed986c88?auto=format&fit=crop&w=1350&q=80'); 
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.4)), 
+                        url('https://images.unsplash.com/photo-1595526114035-0d45ed16cfbf?auto=format&fit=crop&w=1350&q=80'); 
             background-size: cover; background-position: center;
             display: flex; flex-direction: column; justify-content: center; align-items: center;
             color: var(--white); text-align: center; padding: 0 10%;
         }
-        .hero h1 { font-family: 'Playfair Display', serif; font-size: 4rem; margin-bottom: 20px; letter-spacing: 2px; }
-        .hero p { font-size: 1.2rem; font-weight: 300; margin-bottom: 30px; max-width: 800px; }
+        .hero h1 { font-family: 'Playfair Display', serif; font-size: 4.5rem; margin-bottom: 15px; }
+        .hero p { font-size: 1.3rem; font-weight: 300; margin-bottom: 35px; letter-spacing: 1px; }
 
-        /* Buttons */
         .btn-main { 
-            background: var(--primary); color: white; padding: 15px 40px; 
-            text-decoration: none; border-radius: 0; font-weight: bold; 
-            transition: 0.4s; border: 2px solid var(--primary);
+            background: var(--primary); color: white; padding: 18px 45px; 
+            text-decoration: none; font-weight: bold; transition: 0.4s; 
+            border: 2px solid var(--primary); letter-spacing: 2px;
         }
-        .btn-main:hover { background: transparent; color: var(--primary); }
+        .btn-main:hover { background: transparent; color: var(--primary); border-color: var(--primary); }
 
         /* Services Section */
         .section-padding { padding: 100px 8%; text-align: center; }
-        h2.section-title { font-family: 'Playfair Display', serif; font-size: 2.5rem; margin-bottom: 50px; }
-        h2.section-title span { color: var(--primary); }
+        h2.section-title { font-family: 'Playfair Display', serif; font-size: 2.8rem; margin-bottom: 50px; text-transform: capitalize; }
+        h2.section-title::after { content: ''; display: block; width: 60px; height: 3px; background: var(--primary); margin: 15px auto; }
 
-        .services-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+        .services-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; }
         .service-box { 
-            padding: 40px; border: 1px solid #eee; transition: 0.4s; 
-            background: #fff; position: relative; overflow: hidden;
+            padding: 50px 30px; border: 1px solid #f0f0f0; transition: 0.5s; 
+            background: #fff;
         }
-        .service-box:hover { transform: translateY(-10px); box-shadow: 0 20px 40px rgba(0,0,0,0.05); border-color: var(--primary); }
-        .service-box i { font-size: 3rem; color: var(--primary); margin-bottom: 20px; }
+        .service-box:hover { transform: translateY(-15px); box-shadow: 0 25px 50px rgba(0,0,0,0.08); }
+        .service-box i { font-size: 3.5rem; color: var(--primary); margin-bottom: 25px; }
+        .service-box h3 { margin-bottom: 15px; font-family: 'Cinzel', serif; font-size: 1.2rem; }
 
-        /* Portfolio/Gallery */
-        .gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 15px; padding: 20px 8%; }
-        .gallery img { width: 100%; height: 300px; object-fit: cover; filter: grayscale(100%); transition: 0.5s; cursor: pointer; }
-        .gallery img:hover { filter: grayscale(0%); transform: scale(1.05); }
-
-        /* Contact Section */
-        .contact-card { 
-            background: var(--dark); color: white; padding: 60px; 
-            margin: 50px 8%; display: flex; flex-wrap: wrap; justify-content: space-around; align-items: center;
+        /* Contact Details Card */
+        .contact-grid { 
+            background: var(--dark); color: white; padding: 80px 5%; 
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 30px;
+            text-align: center;
         }
-        .contact-info-item { margin: 20px; text-align: center; }
-        .contact-info-item i { font-size: 2rem; color: var(--primary); margin-bottom: 15px; display: block; }
-        .contact-info-item a { color: white; text-decoration: none; font-size: 1.1rem; }
+        .contact-item i { font-size: 2.5rem; color: var(--primary); margin-bottom: 20px; }
+        .contact-item h4 { font-family: 'Cinzel', serif; margin-bottom: 10px; color: var(--primary); }
+        .contact-item a { color: #ccc; text-decoration: none; transition: 0.3s; }
+        .contact-item a:hover { color: white; }
 
         /* Footer */
-        footer { padding: 40px; text-align: center; background: #111; color: #666; font-size: 0.9rem; }
+        footer { padding: 50px; text-align: center; background: #000; color: #888; letter-spacing: 1px; font-size: 0.8rem; border-top: 1px solid #222; }
 
-        /* WhatsApp Button */
-        .whatsapp-icon {
+        /* Floating WhatsApp */
+        .whatsapp-float {
             position: fixed; bottom: 30px; right: 30px; background: #25d366; 
-            width: 60px; height: 60px; border-radius: 50%; display: flex; 
+            width: 65px; height: 65px; border-radius: 50%; display: flex; 
             justify-content: center; align-items: center; color: white; 
-            font-size: 30px; box-shadow: 0 5px 15px rgba(0,0,0,0.3); z-index: 1000;
+            font-size: 32px; box-shadow: 0 10px 25px rgba(37, 211, 102, 0.4); z-index: 1000;
+            transition: 0.3s;
         }
+        .whatsapp-float:hover { transform: scale(1.1); }
 
         @media (max-width: 768px) {
-            .hero h1 { font-size: 2.5rem; }
-            header { padding: 15px 5%; }
+            .hero h1 { font-size: 2.8rem; }
+            .logo { font-size: 1.1rem; }
             nav { display: none; }
         }
     </style>
@@ -97,75 +105,70 @@
 <body>
 
 <header>
-    <div class="logo">YOGESH JANGID</div>
+    <div class="logo">SHRI <span>TEJAL</span> CRAFT</div>
     <nav>
         <a href="#home">HOME</a>
         <a href="#services">SERVICES</a>
-        <a href="#portfolio">PORTFOLIO</a>
         <a href="#contact">CONTACT</a>
     </nav>
 </header>
 
 <section id="home" class="hero">
-    <h1>Luxury Balcony Living</h1>
-    <p>Hum banate hain aapki balcony ko ek aisi jagah, jahan sukoon aur khubsurti ka milan hota hai. Premium designs jo aapki lifestyle ko match karein.</p>
-    <a href="https://wa.me/918239575119" class="btn-main">BOOK A CONSULTATION</a>
+    <p style="text-transform: uppercase; color: var(--primary); font-weight: bold;">Luxury Outdoor Solutions</p>
+    <h1>Shri Tejal Craft Services</h1>
+    <p>Designing modern sanctuaries for your everyday life.</p>
+    <a href="https://wa.me/918239575119" class="btn-main">DISCUSS YOUR PROJECT</a>
 </section>
 
 <section id="services" class="section-padding">
-    <h2 class="section-title">Our <span>Expertise</span></h2>
+    <h2 class="section-title">Our Craft <span>Excellence</span></h2>
     <div class="services-container">
         <div class="service-box">
-            <i class="fa-solid fa-leaf"></i>
-            <h3>Vertical Gardens</h3>
-            <p>Deewaron ko asli ya artificial greenery se sajayein jo kam space mein zyada sukoon de.</p>
+            <i class="fa-solid fa-seedling"></i>
+            <h3>Vertical Garden</h3>
+            <p>Hum banate hain 'Green Walls' jo aapki balcony ko ek natural oxygen zone bana deti hain.</p>
         </div>
         <div class="service-box">
-            <i class="fa-solid fa-border-all"></i>
-            <h3>Luxury Flooring</h3>
-            <p>Weather-proof WPC Decking aur Artificial Grass jo aapke pairon ko sukoon de.</p>
+            <i class="fa-solid fa-tree"></i>
+            <h3>WPC Flooring</h3>
+            <p>Premium wooden finish flooring jo har mausam ko jhel sake aur shandaar dikhe.</p>
         </div>
         <div class="service-box">
-            <i class="fa-solid fa-couch"></i>
-            <h3>Cozy Seating</h3>
-            <p>Customized Jhule, Coffee Tables aur Seating setups jo balcony ko living room bana de.</p>
+            <i class="fa-solid fa-gem"></i>
+            <h3>Bespoke Decor</h3>
+            <p>Custom designs aur luxury elements jo sirf aapke taste ke liye banaye gaye hain.</p>
         </div>
     </div>
 </section>
 
-<section id="portfolio" class="section-padding" style="background: #fafafa;">
-    <h2 class="section-title">Recent <span>Projects</span></h2>
-    <div class="gallery">
-        <img src="https://images.unsplash.com/photo-1590073242678-70ee3fc28e8e?auto=format&fit=crop&w=500&q=80" alt="Balcony 1">
-        <img src="https://images.unsplash.com/photo-1560185007-cde436f6a4d0?auto=format&fit=crop&w=500&q=80" alt="Balcony 2">
-        <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=500&q=80" alt="Balcony 3">
-        <img src="https://images.unsplash.com/photo-1582037928827-42f38a5a1bf2?auto=format&fit=crop&w=500&q=80" alt="Balcony 4">
+<section id="contact" class="contact-grid">
+    <div class="contact-item">
+        <i class="fa-solid fa-signature"></i>
+        <h4>Founder</h4>
+        <p>Yogesh Jangid</p>
     </div>
-</section>
-
-<section id="contact" class="contact-card">
-    <div class="contact-info-item">
-        <i class="fa-solid fa-user"></i>
-        <p>Expert Designer</p>
-        <strong>Yogesh Jangid</strong>
-    </div>
-    <div class="contact-info-item">
-        <i class="fa-solid fa-phone"></i>
-        <p>Call Us</p>
+    <div class="contact-item">
+        <i class="fa-solid fa-phone-volume"></i>
+        <h4>Phone</h4>
         <a href="tel:8239575119">+91 8239575119</a>
     </div>
-    <div class="contact-info-item">
-        <i class="fa-solid fa-envelope"></i>
-        <p>Email Us</p>
+    <div class="contact-item">
+        <i class="fa-solid fa-paper-plane"></i>
+        <h4>Email</h4>
         <a href="mailto:yogiji257@gmail.com">yogiji257@gmail.com</a>
+    </div>
+    <div class="contact-item">
+        <i class="fa-solid fa-location-dot"></i>
+        <h4>Service Area</h4>
+        <p>Available for Nationwide Projects</p>
     </div>
 </section>
 
 <footer>
-    <p>&copy; 2024 Yogesh Balcony Designs | Crafting Outdoor Luxury</p>
+    <p>&copy; 2024 SHRI TEJAL CRAFT SERVICES. Crafted with Excellence by Yogesh Jangid.</p>
 </footer>
 
-<a href="https://wa.me/918239575119" class="whatsapp-icon" target="_blank">
+<a href="https://wa.me/918239575119" class="whatsapp-float" target="_blank">
     <i class="fa-brands fa-whatsapp"></i>
 </a>
 
