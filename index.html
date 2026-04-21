@@ -3,51 +3,239 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LOL-Stream | Daily Laughs</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-</head>
-<body class="bg-gray-900 text-white font-sans">
+    <title>Trinetra Security Services | CCTV Experts</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&family=Michroma&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --security-blue: #0a192f;
+            --alert-orange: #ff6b00;
+            --steel-gray: #f4f4f4;
+            --white: #ffffff;
+        }
 
-    <nav class="p-4 border-b border-gray-800 flex justify-between items-center sticky top-0 bg-gray-900 z-50">
-        <h1 class="text-2xl font-bold text-yellow-500">LOL-Stream</h1>
-        <div class="space-x-4">
-            <button class="bg-yellow-500 text-black px-4 py-2 rounded-lg font-bold hover:bg-yellow-400">Upload</button>
-        </div>
+        /* --- Animations --- */
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes slideInLeft {
+            from { opacity: 0; transform: translateX(-50px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+
+        @keyframes glow {
+            0% { box-shadow: 0 0 5px var(--alert-orange); }
+            50% { box-shadow: 0 0 20px var(--alert-orange); }
+            100% { box-shadow: 0 0 5px var(--alert-orange); }
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth; }
+        body { font-family: 'Roboto', sans-serif; background-color: var(--white); color: #333; line-height: 1.6; overflow-x: hidden; }
+
+        header {
+            background: linear-gradient(rgba(10, 25, 47, 0.9), rgba(10, 25, 47, 0.9)), 
+                        url('https://images.unsplash.com/photo-1521111756787-d2f69136cedf?auto=format&fit=crop&q=80') center/cover;
+            height: 80vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: var(--white);
+            padding: 20px;
+        }
+
+        header h1 { 
+            font-family: 'Michroma', sans-serif; 
+            font-size: clamp(1.8rem, 5vw, 3rem); 
+            color: var(--alert-orange); 
+            animation: slideInLeft 1s ease-out;
+        }
+
+        header p { animation: fadeInUp 1.2s ease-out; }
+
+        nav {
+            background: var(--security-blue);
+            padding: 15px;
+            position: sticky;
+            top: 0;
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            z-index: 1000;
+            border-bottom: 3px solid var(--alert-orange);
+        }
+
+        nav a { color: var(--white); text-decoration: none; font-weight: bold; font-size: 0.9rem; transition: 0.3s; }
+        nav a:hover { color: var(--alert-orange); }
+
+        .container { max-width: 1100px; margin: auto; padding: 60px 20px; }
+        
+        /* --- Service Items Animation --- */
+        .services-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        .service-item {
+            background: var(--steel-gray);
+            padding: 25px;
+            border-radius: 4px;
+            border-left: 5px solid var(--alert-orange);
+            font-weight: bold;
+            transition: 0.4s;
+            cursor: default;
+        }
+
+        .service-item:hover {
+            background: var(--security-blue);
+            color: var(--white);
+            transform: scale(1.05);
+        }
+
+        /* --- Sectors Section --- */
+        .sectors {
+            background: var(--security-blue);
+            color: var(--white);
+            text-align: center;
+            padding: 80px 20px;
+        }
+
+        .tag {
+            display: inline-block;
+            background: rgba(255, 107, 0, 0.1);
+            border: 1px solid var(--alert-orange);
+            padding: 10px 25px;
+            border-radius: 50px;
+            margin: 10px;
+            transition: 0.3s;
+        }
+
+        .tag:hover {
+            background: var(--alert-orange);
+            color: #000;
+        }
+
+        /* --- Pricing Pop --- */
+        .pricing-table {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .price-box { 
+            border: 1px solid #ddd; 
+            text-align: center; 
+            padding: 30px; 
+            background: var(--white);
+            transition: 0.3s;
+        }
+
+        .price-box:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        }
+
+        .featured {
+            border: 2px solid var(--alert-orange);
+            animation: glow 3s infinite;
+        }
+
+        /* --- Contact Pulse --- */
+        .contact-bar { background: #f4f4f4; text-align: center; padding: 80px 20px; }
+
+        .phone-btn {
+            display: inline-block;
+            background: var(--alert-orange);
+            color: white;
+            padding: 20px 40px;
+            text-decoration: none;
+            font-size: 1.8rem;
+            font-weight: bold;
+            border-radius: 50px;
+            margin-top: 20px;
+            animation: pulse 2s infinite;
+        }
+
+        footer { text-align: center; padding: 30px; background: var(--security-blue); color: #888; }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Trinetra Security Services</h1>
+        <p class="location-tag">Kishangarh • Ajmer • Rajasthan</p>
+        <p style="font-size: 1.2rem;">Expert Installation | 24x7 Support | Reliable Team</p>
+    </header>
+
+    <nav>
+        <a href="#services">Services</a>
+        <a href="#sectors">Solutions</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#contact">Call Now</a>
     </nav>
 
-    <main class="max-w-6xl mx-auto p-6">
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            
-            <div class="bg-gray-800 rounded-xl overflow-hidden shadow-lg transition-transform hover:scale-105">
-                <div class="aspect-video bg-black flex items-center justify-center">
-                    <span class="text-gray-500 text-sm">[ Video Embed Goes Here ]</span>
-                </div>
-                <div class="p-4">
-                    <h3 class="font-bold text-lg mb-1">Cat fails at jumping </h3>
-                    <p class="text-gray-400 text-sm">Uploaded by User123</p>
-                    <div class="mt-3 flex justify-between items-center">
-                        <span class="text-yellow-500 text-sm">😂 1.2k Likes</span>
-                        <button class="text-gray-400 hover:text-white">Share</button>
-                    </div>
-                </div>
-            </div>
-
-            <div class="bg-gray-800 rounded-xl overflow-hidden shadow-lg transition-transform hover:scale-105">
-                <div class="aspect-video bg-black flex items-center justify-center">
-                    <span class="text-gray-500 text-sm">[ Video Embed Goes Here ]</span>
-                </div>
-                <div class="p-4">
-                    <h3 class="font-bold text-lg mb-1">Dad Jokes: Extreme Edition</h3>
-                    <p class="text-gray-400 text-sm">Uploaded by ComedyKing</p>
-                    <div class="mt-3 flex justify-between items-center">
-                        <span class="text-yellow-500 text-sm">😂 850 Likes</span>
-                        <button class="text-gray-400 hover:text-white">Share</button>
-                    </div>
-                </div>
-            </div>
-
+    <div id="services" class="container">
+        <h2 style="text-align:center; margin-bottom:40px; font-family:'Michroma';">Our Expertise</h2>
+        <div class="services-list">
+            <div class="service-item">CCTV Camera Installation</div>
+            <div class="service-item">HD & IP Camera Setup</div>
+            <div class="service-item">DVR & NVR Installation</div>
+            <div class="service-item">24x7 Service Support</div>
+            <div class="service-item">Repair & Maintenance Service</div>
+            <div class="service-item">Remote Mobile Viewing Setup</div>
         </div>
-    </main>
+    </div>
+
+    <div id="sectors" class="sectors">
+        <h2 style="font-family:'Michroma'; margin-bottom:30px;">Security For Every Sector</h2>
+        <div class="tag">Home</div>
+        <div class="tag">Office</div>
+        <div class="tag">Shop</div>
+        <div class="tag">Factory</div>
+    </div>
+
+    <div id="pricing" class="container">
+        <h2 style="text-align:center; margin-bottom:40px; font-family:'Michroma';">Package Rates</h2>
+        <div class="pricing-table">
+            <div class="price-box">
+                <h3>Starter Pack</h3>
+                <p>2 HD Cameras + 4CH DVR</p>
+                <div style="font-size: 2rem; font-weight: bold; color: var(--alert-orange); margin: 15px 0;">₹8,500*</div>
+                <p>Basic Home Protection</p>
+            </div>
+            <div class="price-box featured">
+                <h3>Business Pack</h3>
+                <p>4 IP Cameras + 4CH NVR</p>
+                <div style="font-size: 2rem; font-weight: bold; color: var(--alert-orange); margin: 15px 0;">₹14,999*</div>
+                <p>High-End Clarity</p>
+            </div>
+            <div class="price-box">
+                <h3>Advanced Pack</h3>
+                <p>8+ IP Cameras Setup</p>
+                <div style="font-size: 2rem; font-weight: bold; color: var(--alert-orange); margin: 15px 0;">Custom</div>
+                <p>Full Industrial Security</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="contact" class="contact-bar">
+        <h2>Secure Your Property Today</h2>
+        <p>Talk to <strong>Ramesh Jangid</strong> for a free site survey</p>
+        <a href="tel:+919529263473" class="phone-btn">+91 95292 63473</a>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Trinetra Security Services | Servicing Kishangarh & Ajmer</p>
+    </footer>
 
 </body>
 </html>
